@@ -1,0 +1,42 @@
+@import "./constantes.scss";
+
+#header {width: 100%; height: 77px; background: $Rouge; position: absolute; z-index: 10; @include centerRow;color: white;
+    font-family: Contrail;}
+
+
+#sidebar{
+    height: 100%; width: 30%; background: $Rouge; padding-left: 20px; margin-top: 80px; position: absolute; z-index: 10;
+    ul{
+        width: 20%;
+        
+        li{
+            width: 200px;
+            text-align: center;
+            background: $Rouge;
+            margin-top: 80px;
+            
+            a{
+                font-style: 24px;
+                text-decoration: none;
+                color: white;
+                font-family: Anton;
+                transition: 0.3s;
+                font-weight: bold;
+                
+                &:hover{
+                    color: black;
+
+                }
+            }
+        .white-line {
+            width: 100%;
+            height: 1px;
+            background-color: white;
+          }}
+    }
+}
+    div     { width: 50%; height: fit-content; display: flex; flex-direction: column; margin: 10px 0;
+        }
+        
+        img   { position: absolute; z-index: 0; width: 70%; height: 100%; margin-top:70px; margin-left: 450px;}
+        

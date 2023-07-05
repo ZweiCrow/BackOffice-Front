@@ -1,12 +1,15 @@
 import React from "react";
 import "../utils/sass/home.page.scss";
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 function Home() {
+  const target = sessionStorage.getItem("choix")
+
+  
   return (
     <div id="container">
       <header id="header">
-        <h2 id="h2">Back Office</h2>
+        <h1 id="h2">{(target === "Palais Royal") ? "Théatre du Palais Royal" : "Théatre Michel"}</h1>
       </header>
 
       <div id="user">
@@ -16,15 +19,15 @@ function Home() {
 
       <div id="sidebar">
         <ul>
-          <li> <a href="/">Théâtre du Palais Royal</a> </li>
+          <li> <Link to="/">Théâtre du Palais Royal</Link> </li>
           <img className="divider" src="/img/line-white.png" alt="" />
-          <li> <a href="/visites">Visites</a> </li>
+          <li> <Link to="/home/Visites">Visites</Link> </li>
           <img className="divider" src="/img/line-white.png" alt="" />
-          <li> <a href="/interviews">Interviews</a> </li>
+          <li> <Link to="/interviews">Interviews</Link> </li>
           <img className="divider" src="/img/line-white.png" alt="" />
-          <li> <a href="/actus">Actualités</a> </li>
+          <li> <Link to="/actus">Actualités</Link> </li>
           <img className="divider" src="/img/line-white.png" alt="" />
-          <li> <a href="/programmation">Programmation</a> </li>
+          <li> <Link to="/programmation">Programmation</Link> </li>
         </ul>
       </div>
 
@@ -32,7 +35,7 @@ function Home() {
         <Outlet />
       </div>
 
-      <img id="background" src="/img/login-background.jpg" alt="background"/>
+      <img id="background" src={(target === "Palais Royal") ? "/img/backgroundPR.jpg" : "/img/backgroundM.jpg"} alt="background"/>
     </div>
   );
 }

@@ -1,0 +1,10 @@
+@import "./constantes.scss";
+
+#noScroll { width: 100%; height: 100%; overflow-y: hidden;
+            #visites  { width: 100%; height: 100%; overflow-y: scroll;
+                        h2  { font-family: Contrail; font-size: 30px; color: $Blanc; margin-left: 50px; margin-top: 50px;}
+                        #scrollable { width: 90%; height: fit-content; margin: 40px auto 0; display: flex; flex-wrap: wrap; justify-content: space-around;
+                                      .tile { width: 500px; height: 150px; background: darkcyan; margin: 20px 0; border-radius: 5px;}
+                                    }
+                      }
+          }

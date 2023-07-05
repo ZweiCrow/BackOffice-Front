@@ -8,7 +8,7 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(`${login} veut se connecter !`);
+    console.log(`${login} (${password}) veut se connecter !`);
   } 
 
   return (

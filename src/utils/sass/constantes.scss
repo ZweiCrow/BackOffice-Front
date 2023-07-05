@@ -1,8 +1,7 @@
-
 $Blanc: #D9D9D9;
 $BlancAlt: #D9D9D9CC;
 $Rouge: #AE0000;
-$RougeAlt: #c26a6a;
+$RougeAlt: #AE0000CC;
 $Noir: #1E1E1E;
 $NoirAlt: #1E1E1EAC;
 
@@ -14,6 +13,5 @@ a { text-decoration: none;}
 
 @mixin centerRow { display: flex; flex-direction: row; justify-content: center; align-items: center;}
 @mixin centerCol { display: flex; flex-direction: column; justify-content: center; align-items: center;}
-
 
 // @media screen and (max-width: 450px) {}

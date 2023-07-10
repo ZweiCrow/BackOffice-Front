@@ -1,5 +1,6 @@
 import React from 'react';
 import "../utils/sass/display.scss"
+import BoutonVisite from './BoutonVisite';
 
 const Visites = () => {
   const target = sessionStorage.getItem("choix")
@@ -56,9 +57,10 @@ const Visites = () => {
       <div id='display'>
         <h2>Lieux :</h2>
         <div id='scrollable'>
-          {Lieux.map(()=>{
+        <BoutonVisite id={{role: "add"}}/>
+          {Lieux.map((item)=>{
             return(
-              <div className='tile'></div>
+              <BoutonVisite id={{item}}/>
             )
           })}
         </div>

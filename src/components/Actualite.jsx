@@ -1,7 +1,7 @@
 import React from 'react';
 import "../utils/sass/display.scss"
 
-const Visites = () => {
+const Actualite = () => {
   const target = sessionStorage.getItem("choix")
 
   const Lieux = [
@@ -54,7 +54,7 @@ const Visites = () => {
   return (
     <div id='noScroll'>
       <div id='display'>
-        <h2>Lieux :</h2>
+        <h2>Actualités :</h2>
         <div id='scrollable'>
           {Lieux.map(()=>{
             return(
@@ -67,4 +67,4 @@ const Visites = () => {
   );
 };
 
-export default Visites;
+export default Actualite;

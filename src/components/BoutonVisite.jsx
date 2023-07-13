@@ -1,14 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import "../utils/sass/bouton.visite.scss"
+import AddContentForm from './formulaire.jsx';
 
 const BoutonVisite = ({id}) => {
-    
    
   if (id.role === "add") {
     return (
-      <Link to={"/"} className="addBouton">
+      <Link to="/home/formulaire" className="addBouton">
         <img className="add" src="/img/icons/add.svg" alt="" />
+        
       </Link>
     );
   }else{

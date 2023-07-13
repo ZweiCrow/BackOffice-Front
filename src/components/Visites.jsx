@@ -2,6 +2,7 @@ import React from 'react';
 import "../utils/sass/display.scss"
 import BoutonVisite from './BoutonVisite';
 
+
 const Visites = () => {
   const target = sessionStorage.getItem("choix")
 
@@ -61,6 +62,8 @@ const Visites = () => {
           {Lieux.map((item)=>{
             return(
               <BoutonVisite id={{item}}/>
+              
+              
             )
           })}
         </div>

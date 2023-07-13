@@ -1,0 +1,16 @@
+@import "./constantes.scss";
+
+#Ajout { width: 100%; height: 100vh; background: $RougeAlt; position: relative; @include centerRow;
+    #add-content-form {position: absolute; z-index: 10; width: 50%; height: 45%; border-radius: 5px; background: $BlancAlt; border: 5px solid $Blanc; @include centerCol;
+  
+            div {width: 50%; height: fit-content; display: flex; flex-direction: column; margin: 10px 0;
+                    label {
+                        font-family: Contrail; font-size: 20px; color: $Noir; margin-left: 30px; margin-bottom: 10px;}
+                    input,textarea {border: none; border-radius: 50px; padding: 10px 30px; background: $Blanc; transition: .5s; font-family: Contrail; font-size: 18px; color: #000;
+                    }
+            }
+  
+            button {font-family: Contrail; font-size: 20px; color: $Blanc; background: $Rouge; border: none; border-radius: 50px; padding: 10px 30px; transition: .5s; margin-top: 50px;
+            }
+        }
+    }

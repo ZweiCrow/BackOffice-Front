@@ -6,19 +6,23 @@ import Visites from "./components/Visites";
 import Acteurs from "./components/Acteurs";
 import Actualite from "./components/Actualite";
 import Programmation from "./components/Programmation";
+import AddContentForm from "./components/formulaire";
 
 function App() {
   return (
     <>
       <Routes>
         {/* <Route path="/" Component={Login} /> */}
+
         <Route path="/" Component={Choix} />
         <Route path="/home" Component={Home} > 
           <Route path="Visites" Component={Visites} />
           <Route path="Acteurs" Component={Acteurs} />
           <Route path="Actualite" Component={Actualite} />
           <Route path="Programmation" Component={Programmation} />
+          <Route path="Formulaire" Component={AddContentForm} />
         </Route>
+        
       </Routes>
     </>
   );

@@ -6,7 +6,7 @@ const BoutonProgrammation = ({id}) => {
 
   if (id.role === "add") {
     return (
-      <Link to={"/"} className="addButton">
+      <Link to="/home/formulaire" className="addButton">
         <img className="add" src="/img/icons/add.svg" alt="" />
       </Link>
     );

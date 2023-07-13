@@ -7,7 +7,7 @@ const BoutonActualite = ({id}) => {
    
   if (id.role === "add") {
     return (
-      <Link to={"/"} className="addBouton">
+      <Link to="/home/formulaire" className="addBouton">
         <img className="add" src="/img/icons/add.svg" alt="" />
       </Link>
     );

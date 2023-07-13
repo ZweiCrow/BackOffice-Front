@@ -16,10 +16,10 @@ const AddContentForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    console.log(`${title} (${description}) ont été ajouté !`);
    
-    // setTitle('');
-    // setDescription('');
+    setTitle('');
+    setDescription('');
   };
 
   return (

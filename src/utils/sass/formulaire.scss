@@ -1,6 +1,6 @@
 @import "./constantes.scss";
 
-#Ajout { width: 100%; height: 100vh; background: $RougeAlt; position: relative; @include centerRow;
+#Ajout { width: 100%; height: 100%; background: $RougeAlt; position: relative; @include centerRow;
     #add-content-form {position: absolute; z-index: 10; width: 50%; height: 45%; border-radius: 5px; background: $BlancAlt; border: 5px solid $Blanc; @include centerCol;
   
             div {width: 50%; height: fit-content; display: flex; flex-direction: column; margin: 10px 0;

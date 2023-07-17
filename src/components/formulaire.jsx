@@ -5,6 +5,7 @@ import "../utils/sass/formulaire.scss";
 const AddContentForm = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const [images, setImages] = useState("");
 
   const handleTitleChange = (e) => {
     setTitle(e.target.value);
@@ -13,10 +14,13 @@ const AddContentForm = () => {
   const handleDescriptionChange = (e) => {
     setDescription(e.target.value);
   };
+  const handleImagesChange = (e) => {
+    setImages(e.target.value);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(`${title} (${description}) ont été ajouté !`);
+    console.log(`${title} (${description})${images} ont été ajouté !`);
    
     setTitle('');
     setDescription('');
@@ -33,6 +37,15 @@ const AddContentForm = () => {
             value={title}
             onChange={handleTitleChange}
             />
+        </div>
+        <div>
+            <label htmlFor="images">Contenu Images :</label>
+            <button 
+            type="image"
+            id='images'
+            value={images}
+            onChange={handleImagesChange}>
+            <img  src="/img/icons/add.svg" alt="" /></button>
         </div>
         <div>
             <label htmlFor="description">Description :</label>

@@ -7,7 +7,6 @@ import Acteurs from "./components/Acteurs";
 import Actualite from "./components/Actualite";
 import Programmation from "./components/Programmation";
 import AddContentForm from "./components/formulaire";
-import ProtectedRoutes from "./components/ProtectedRoutes";
 
 
 function App() {

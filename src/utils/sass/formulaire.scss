@@ -6,7 +6,7 @@
             div {width: 50%; height: fit-content; display: flex; flex-direction: column; margin: 10px 0;
                     label {
                         font-family: Contrail; font-size: 20px; color: $Noir; margin-left: 40px; margin-bottom: 10px;
-                        }#images{ filter: grayscale(1); transition: .5s;
+                        }#images{ filter: grayscale(1); transition: .5s; background: $Blanc; padding: 20px; 
                             &:hover { filter: grayscale(0);}
                           } 
                     input,textarea {border: none; border-radius: 50px; padding: 10px 30px; background: $Blanc; transition: .5s; font-family: Contrail; font-size: 18px; color: #000;
@@ -18,7 +18,7 @@
   
             button {font-family: Contrail; font-size: 20px; color: $Blanc; background: $Rouge; border: none; border-radius: 50px; padding: 10px 30px; 
             padding-bottom:15px;
-                transition: .5s; margin-top: 30px;
+                transition: .5s; margin-top: 10px;
                 margin-bottom: 15px;
             }
         }

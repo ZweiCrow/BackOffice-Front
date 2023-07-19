@@ -3,7 +3,6 @@ import "../utils/sass/display.scss"
 import BoutonActeurs from './BoutonActeurs';
 
 const Acteurs = () => {
-  const target = sessionStorage.getItem("choix")
 
   const Lieux = [
     {

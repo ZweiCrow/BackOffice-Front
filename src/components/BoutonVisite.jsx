@@ -15,8 +15,8 @@ const BoutonVisite = ({id}) => {
   }else{
     return (
       <Link to={"/"} id="bouton">
-        <div className="name"><p>{id.nom}</p></div>
-        <img className="piece" src={id.image} alt="" />
+        <div className="name"><p>{id.name}</p></div>
+        <img className="piece" src={id.imagePath} alt="" />
       </Link>
     );
   }

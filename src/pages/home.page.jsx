@@ -4,8 +4,9 @@ import { Link, Outlet } from "react-router-dom";
 
 function Home() {
   const target = sessionStorage.getItem("choix")
+  const user = localStorage.getItem('id')
 
-  
+  if (user){  
   return (
     <div id="container">
       <header id="header">
@@ -46,7 +47,7 @@ function Home() {
 
       <img id="background" src={(target === "Palais Royal") ? "/img/backgroundPR.jpg" : "/img/backgroundM.jpg"} alt="background"/>
     </div>
-  );
+  );}
 }
 
 export default Home;

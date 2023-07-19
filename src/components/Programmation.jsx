@@ -3,7 +3,6 @@ import "../utils/sass/display.scss"
 import BoutonProgrammation from './BoutonProgrammation';
 
 const Programmation = () => {
-  const target = sessionStorage.getItem("choix")
 
   const Lieux = [
     {

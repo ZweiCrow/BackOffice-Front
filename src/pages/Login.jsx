@@ -1,28 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import "../utils/sass/login.scss"
-import axios from 'axios';
-import { URL } from '../Urls';
-import Cookies from 'js-cookie';
+import Cookies from 'js-cookie'; // https://www.npmjs.com/package/js-cookie
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
-  const [adminList, setAdminList] = useState([]);
   const passwordRegex = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
   const loginRegex = /.{5,}/
+  const navigate = useNavigate();
 
-  useEffect(()=>{
-    const fetchData = async () => {
-      try {
-        const {data} = await axios.get(URL.fetchUsers)
-        // console.log(data);
-        setAdminList(data)
-      } catch (error) {
-        console.error(error)
-      }
-    }
-    fetchData()
-  }, [])
+  const GoOn = () => {
+    setTimeout(()=>{
+      navigate('/home');
+    }, 100)
+  }
 
   const VerifRegEx = () => {
     if (loginRegex.test(login) ) {
@@ -53,7 +45,8 @@ const Login = () => {
   const VerifUser = () => {
     // post vers le back end avec login et mdp qui return l'id dans la response
     // localStorage.setItem("TokenForDNSUser", 1234567890)
-    Cookies.set('TokenForDNSUser', '1234567890', { expires: 1 })
+    Cookies.set('TokenForDNSUser', '64b2d6a2fb83c925e067f6b7', { expires: 1 }) // remplacer par l'id de l'utilisateur
+    GoOn()
   }
   
   const handleSubmit = (e) => {

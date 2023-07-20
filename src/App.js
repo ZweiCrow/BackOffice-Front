@@ -14,7 +14,7 @@ function App() {
   return (
     <>
       <Routes>
-        {/* <Route path="/" Component={Login} /> */}
+        <Route path="/" Component={Login} />
 
         <Route path="/" Component={Choix} />
         <Route path="home" Component={Home} > 

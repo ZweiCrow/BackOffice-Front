@@ -1,12 +1,12 @@
 import React from "react";
 import "../utils/sass/home.page.scss";
 import { Link, Outlet } from "react-router-dom";
+import Cookies from "js-cookie";
 
 function Home() {
   const target = sessionStorage.getItem("choix")
-  const user = localStorage.getItem('id')
 
-  if (user){  
+  if (Cookies.get('TokenForDNSUser')){  
   return (
     <div id="container">
       <header id="header">

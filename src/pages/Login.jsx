@@ -1,15 +1,30 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import "../utils/sass/login.scss"
+import axios from 'axios';
+import { URL } from '../Urls';
+import Cookies from 'js-cookie';
 
 const Login = () => {
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
-  // const [adminList, setAdminList] = useState([]);
+  const [adminList, setAdminList] = useState([]);
   const passwordRegex = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
   const loginRegex = /.{5,}/
-  
-  const handleSubmit = (e) => {
-    e.preventDefault();
+
+  useEffect(()=>{
+    const fetchData = async () => {
+      try {
+        const {data} = await axios.get(URL.fetchUsers)
+        // console.log(data);
+        setAdminList(data)
+      } catch (error) {
+        console.error(error)
+      }
+    }
+    fetchData()
+  }, [])
+
+  const VerifRegEx = () => {
     if (loginRegex.test(login) ) {
       console.log("login okay");
       const message = document.querySelector("#errLogMes")
@@ -31,9 +46,19 @@ const Login = () => {
     }
     
     if(loginRegex.test(login) && passwordRegex.test(password)){
-      localStorage.setItem("id", 1234567890)
-      
+      VerifUser()
     }
+  }
+
+  const VerifUser = () => {
+    // post vers le back end avec login et mdp qui return l'id dans la response
+    // localStorage.setItem("TokenForDNSUser", 1234567890)
+    Cookies.set('TokenForDNSUser', '1234567890', { expires: 1 })
+  }
+  
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    VerifRegEx()
   }
 
   return (

@@ -1,64 +1,30 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import "../utils/sass/display.scss"
 import BoutonProgrammation from './BoutonProgrammation';
+import axios from 'axios';
+import { URL } from '../Urls';
 
 const Programmation = () => {
+  const target = sessionStorage.getItem("choix")
+  const [Data, setData] = useState([])
 
-  const Lieux = [
-    {
-      _id: 123467890,
-      nom: "Nom de la piece",
-      image: "/img/theatreMichel/images/Sebastien_Azzopardi.jpg"
-    },
-    {
-      _id: 123567890,
-      nom: "Nom de la piece",
-      image: "/img/theatreMichel/images/Sebastien_Azzopardi.jpg"
-    },
-    {
-      _id: 124567890,
-      nom: "Nom de la piece",
-      image: "/img/theatreMichel/images/Sebastien_Azzopardi.jpg"
-    },
-    {
-      _id: 134567890,
-      nom: "Nom de la piece",
-      image: "/img/theatreMichel/images/Sebastien_Azzopardi.jpg"
-    },
-    {
-      _id: 234567890,
-      nom: "Nom de la piece",
-      image: "/img/theatreMichel/images/Sebastien_Azzopardi.jpg"
-    },
-    {
-      _id: 12567890,
-      nom: "Nom de la piece",
-      image: "/img/theatreMichel/images/Sebastien_Azzopardi.jpg"
-    },{
-      _id: 1234567890,
-      nom: "Nom de la piece",
-      image: "/img/theatreMichel/images/Sebastien_Azzopardi.jpg"
-    },
-    {
-      _id: 123456789,
-      nom: "Nom de la piece",
-      image: "/img/theatreMichel/images/Sebastien_Azzopardi.jpg"
-    },
-    {
-      _id: 12590,
-      nom: "Nom de la piece",
-      image: "/img/theatreMichel/images/Sebastien_Azzopardi.jpg"
-    },{
-      _id: 1234567,
-      nom: "Nom de la piece",
-      image: "/img/theatreMichel/images/Sebastien_Azzopardi.jpg"
-    },
-    {
-      _id: 456789,
-      nom: "Nom de la piece",
-      image: "/img/theatreMichel/images/Sebastien_Azzopardi.jpg"
-    },
-  ]
+  useEffect(()=>{
+    const fetchData = async () => {
+      try {
+        let data ;
+        if (target === "Palais Royal") {
+           data = await axios.get(URL.fetchPiecesPR)
+        } else if (target === "Michel") {
+           data = await axios.get(URL.fetchPiecesM)
+        }
+        // console.log(data.data);
+        setData(data.data)
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    fetchData()
+  }, [])
 
   return (
     <div id='noScroll'>
@@ -66,7 +32,7 @@ const Programmation = () => {
         <h2>Programmation :</h2>
         <div id='scrollable'>
           <BoutonProgrammation id={{role: "add"}}/>
-          {Lieux.map((item)=>{
+          {Data.map((item)=>{
             return(
               <BoutonProgrammation id={item}/>
             )

@@ -4,6 +4,7 @@ import "../utils/sass/bouton.visite.scss"
 import AddContentForm from './formulaire.jsx';
 
 const BoutonVisite = ({id}) => {
+  
    
   if (id.role === "add") {
     return (
@@ -16,7 +17,7 @@ const BoutonVisite = ({id}) => {
     return (
       <Link to={"/"} id="bouton">
         <div className="name"><p>{id.name}</p></div>
-        <img className="piece" src={id.imagePath} alt="" />
+        <img className="piece" src={"https://theatre.startwin.fr/" + id.imagePath} alt="" />
       </Link>
     );
   }

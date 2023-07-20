@@ -14,8 +14,8 @@ const BoutonActualite = ({id}) => {
   }else{
     return (
       <Link to={"/"} id="bouton">
-        <div className="name"><p>{id.nom}</p></div>
-        <img className="actus" src={id.image} alt="" />
+        <div className="name"><p>{id.name}</p></div>
+        <img className="actus" src={"https://theatre.startwin.fr/" + id.imagePath} alt="" />
       </Link>
     );
   }

@@ -1,12 +1,30 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import "../utils/sass/display.scss"
 import BoutonActualite from './BoutonActualite';
+import axios from 'axios';
+import { URL } from '../Urls';
 
 const Actualite = () => {
   const target = sessionStorage.getItem("choix")
+  const [Data, setData] = useState([])
 
-  const Lieux = [
-  ]
+  useEffect(()=>{
+    const fetchData = async () => {
+      try {
+        let data ;
+        if (target === "Palais Royal") {
+           data = await axios.get(URL.fetchActualitePR)
+        } else if (target === "Michel") {
+           data = await axios.get(URL.fetchActualiteM)
+        }
+        // console.log(data.data);
+        setData(data.data)
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    fetchData()
+  }, [])
 
   return (
     <div id='noScroll'>
@@ -14,9 +32,9 @@ const Actualite = () => {
         <h2>Actualités :</h2>
         <div id='scrollable'>
             <BoutonActualite id={{role: "add"}}/>
-            {Lieux.map((item)=>{
+            {Data.map((item)=>{
               return(
-                <BoutonActualite id={{item}}/>
+                <BoutonActualite id={item}/>
               )
           })}
         </div>

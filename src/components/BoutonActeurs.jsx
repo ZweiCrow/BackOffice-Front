@@ -11,10 +11,11 @@ const BoutonActeurs = ({ id }) => {
       </Link>
     );
   }else{
+    console.log(id);
     return (
       <Link to={"/"} id="BoutonActeurs">
-        <div className="name"><p>{id.nom}</p></div>
-        <img className="face" src={id.image} alt="" />
+        <div className="name"><p>{id.name}</p></div>
+        <img className="face" src={"https://theatre.startwin.fr/" + id.imagePath} alt="" />
       </Link>
     );
   }

@@ -1,64 +1,30 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import "../utils/sass/display.scss"
 import BoutonActeurs from './BoutonActeurs';
+import axios from 'axios';
+import { URL } from '../Urls';
 
 const Acteurs = () => {
+  const target = sessionStorage.getItem("choix")
+  const [Data, setData] = useState([])
 
-  const Lieux = [
-    {
-      _id: 123467890,
-      nom: "Sebastien Azzopardi",
-      image: "/img/theatreMichel/images/Sebastien_Azzopardi.jpg"
-    },
-    {
-      _id: 123567890,
-      nom: "Sebastien Azzopardi",
-      image: "/img/theatreMichel/images/Sebastien_Azzopardi.jpg"
-    },
-    {
-      _id: 124567890,
-      nom: "Sebastien Azzopardi",
-      image: "/img/theatreMichel/images/Sebastien_Azzopardi.jpg"
-    },
-    {
-      _id: 134567890,
-      nom: "Sebastien Azzopardi",
-      image: "/img/theatreMichel/images/Sebastien_Azzopardi.jpg"
-    },
-    {
-      _id: 234567890,
-      nom: "Sebastien Azzopardi",
-      image: "/img/theatreMichel/images/Sebastien_Azzopardi.jpg"
-    },
-    {
-      _id: 12567890,
-      nom: "Sebastien Azzopardi",
-      image: "/img/theatreMichel/images/Sebastien_Azzopardi.jpg"
-    },{
-      _id: 1234567890,
-      nom: "Sebastien Azzopardi",
-      image: "/img/theatreMichel/images/Sebastien_Azzopardi.jpg"
-    },
-    {
-      _id: 123456789,
-      nom: "Sebastien Azzopardi",
-      image: "/img/theatreMichel/images/Sebastien_Azzopardi.jpg"
-    },
-    {
-      _id: 12590,
-      nom: "Sebastien Azzopardi",
-      image: "/img/theatreMichel/images/Sebastien_Azzopardi.jpg"
-    },{
-      _id: 1234567,
-      nom: "Sebastien Azzopardi",
-      image: "/img/theatreMichel/images/Sebastien_Azzopardi.jpg"
-    },
-    {
-      _id: 456789,
-      nom: "Sebastien Azzopardi",
-      image: "/img/theatreMichel/images/Sebastien_Azzopardi.jpg"
-    },
-  ]
+  useEffect(()=>{
+    const fetchData = async () => {
+      try {
+        let data ;
+        if (target === "Palais Royal") {
+           data = await axios.get(URL.fetchActorsPR)
+        } else if (target === "Michel") {
+           data = await axios.get(URL.fetchActorsM)
+        }
+        // console.log(data.data);
+        setData(data.data)
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    fetchData()
+  }, [])
 
   return (
     <div id='noScroll'>
@@ -66,9 +32,9 @@ const Acteurs = () => {
         <h2>Acteurs :</h2>
         <div id='scrollable'>
           <BoutonActeurs id={{role: "add"}}/>
-          {Lieux.map((item)=>{
+          {Data.map((item)=>{
             return(
-              <BoutonActeurs id={item}/>
+              <BoutonActeurs id={item} key={item._id}/>
             )
           })}
         </div>

@@ -13,8 +13,8 @@ const BoutonProgrammation = ({id}) => {
   }else{
     return (
       <Link to={"/"} id="Bouton">
-        <div className="name"><p>{id.nom}</p></div>
-        <img className="affiche" src={id.image} alt="" />
+        <div className="name"><p>{id.name}</p></div>
+        <img className="affiche" src={"https://theatre.startwin.fr/" + id.imagePath} alt="" />
       </Link>
     );
   }

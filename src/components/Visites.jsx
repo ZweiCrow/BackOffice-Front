@@ -7,15 +7,19 @@ import { URL } from '../Urls';
 
 const Visites = () => {
   const target = sessionStorage.getItem("choix")
-  const [Lieux, setLieux] = useState([])
-  
+  const [Data, setData] = useState([])
 
   useEffect(()=>{
     const fetchData = async () => {
       try {
-        const {data} = await axios.get(URL.fetchActorsPR, { crossdomain: true })
-        console.log(data);
-        // setActeurs(data)
+        let data ;
+        if (target === "Palais Royal") {
+           data = await axios.get(URL.fetchLieuxPR)
+        } else if (target === "Michel") {
+           data = await axios.get(URL.fetchLieuxM)
+        }
+        // console.log(data.data);
+        setData(data.data)
       } catch (error) {
         console.error(error);
       }
@@ -29,9 +33,9 @@ const Visites = () => {
         <h2>Lieux :</h2>
         <div id='scrollable'>
         <BoutonVisite id={{role: "add"}}/>
-          {Lieux.map((item)=>{
+          {Data.map((item)=>{
             return(
-              <BoutonVisite id={{item}}/>
+              <BoutonVisite id={item}/>
             )
           })}
         </div>

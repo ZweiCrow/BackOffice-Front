@@ -1,28 +1,28 @@
 export const URL = {
   // RECUPERATION
-  fetchActors: "https://gracious-rhodes.151-80-155-31.plesk.page/actors", // tout les acteurs
-  fetchActorsByPlay: "https://gracious-rhodes.151-80-155-31.plesk.page/actors/play/", // + le nom de la piece
-  fetchActorsPR: "https://gracious-rhodes.151-80-155-31.plesk.page/actors/Palais Royal",
-  fetchActorsM: "https://gracious-rhodes.151-80-155-31.plesk.page/actors/Michel", 
-  fetchActorsById: "https://gracious-rhodes.151-80-155-31.plesk.page/actors/actor/id/", // + id de l'acteur
+  fetchActors: "https://theatre.startwin.fr/actors", // tout les acteurs
+  fetchActorsByPlay: "https://theatre.startwin.fr/actors/play/", // + le nom de la piece
+  fetchActorsPR: "https://theatre.startwin.fr/actors/Palais Royal",
+  fetchActorsM: "https://theatre.startwin.fr/actors/Michel", 
+  fetchActorsById: "https://theatre.startwin.fr/actors/actor/id/", // + id de l'acteur
 
-  fetchLieux: "https://gracious-rhodes.151-80-155-31.plesk.page/locations", // tout les lieux
-  fetchLieuxPR: "https://gracious-rhodes.151-80-155-31.plesk.page/locations/Palais Royal", 
-  fetchLieuxM: "https://gracious-rhodes.151-80-155-31.plesk.page/locations/Michel", 
-  fetchLieuxPRById: "https://gracious-rhodes.151-80-155-31.plesk.page/locations/Palais Royal/id/", // + id
-  fetchLieuxMById: "https://gracious-rhodes.151-80-155-31.plesk.page/locations/Michel/id/", // + id 
+  fetchLieux: "https://theatre.startwin.fr/locations", // tout les lieux
+  fetchLieuxPR: "https://theatre.startwin.fr/locations/Palais Royal", 
+  fetchLieuxM: "https://theatre.startwin.fr/locations/Michel", 
+  fetchLieuxPRById: "https://theatre.startwin.fr/locations/Palais Royal/id/", // + id
+  fetchLieuxMById: "https://theatre.startwin.fr/locations/Michel/id/", // + id 
 
-  fetchPieces: "https://gracious-rhodes.151-80-155-31.plesk.page/plays", // toutes les pieces
-  fetchPiecesPR: "https://gracious-rhodes.151-80-155-31.plesk.page/plays/Palais Royal", 
-  fetchPiecesM: "https://gracious-rhodes.151-80-155-31.plesk.page/plays/Michel", 
-  fetchPiecesPRById: "https://gracious-rhodes.151-80-155-31.plesk.page/plays/Palais Royal/", // + id
-  fetchPiecesMById: "https://gracious-rhodes.151-80-155-31.plesk.page/plays/Michel/", // + id
+  fetchPieces: "https://theatre.startwin.fr/plays", // toutes les pieces
+  fetchPiecesPR: "https://theatre.startwin.fr/plays/Palais Royal", 
+  fetchPiecesM: "https://theatre.startwin.fr/plays/Michel", 
+  fetchPiecesPRById: "https://theatre.startwin.fr/plays/Palais Royal/", // + id
+  fetchPiecesMById: "https://theatre.startwin.fr/plays/Michel/", // + id
 
-  fetchActualite: "https://gracious-rhodes.151-80-155-31.plesk.page/news", // tout les lieux
-  fetchActualitePR: "https://gracious-rhodes.151-80-155-31.plesk.page/news/Palais Royal", 
-  fetchActualiteM: "https://gracious-rhodes.151-80-155-31.plesk.page/news/Michel", 
-  fetchActualitePRById: "https://gracious-rhodes.151-80-155-31.plesk.page/news/Palais Royal/id/", // + id
-  fetchActualiteMById: "https://gracious-rhodes.151-80-155-31.plesk.page/news/Michel/id/", // + id
+  fetchActualite: "https://theatre.startwin.fr/news", // tout les lieux
+  fetchActualitePR: "https://theatre.startwin.fr/news/Palais Royal", 
+  fetchActualiteM: "https://theatre.startwin.fr/news/Michel", 
+  fetchActualitePRById: "https://theatre.startwin.fr/news/Palais Royal/id/", // + id
+  fetchActualiteMById: "https://theatre.startwin.fr/news/Michel/id/", // + id
   
   // ENREGISTREMENT
   

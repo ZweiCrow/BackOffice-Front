@@ -24,7 +24,8 @@ export const URL = {
   fetchActualitePRById: "https://theatre.startwin.fr/news/Palais Royal/id/", // + id
   fetchActualiteMById: "https://theatre.startwin.fr/news/Michel/id/", // + id
 
-  fetchUsers: "https://theatre.startwin.fr/users"
+  fetchUsers: "https://theatre.startwin.fr/users",
+  verifyUsers: "https://theatre.startwin.fr/users/check-user-exists"
   
   // ENREGISTREMENT
   

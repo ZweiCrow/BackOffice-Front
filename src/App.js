@@ -16,8 +16,8 @@ function App() {
       <Routes>
         <Route path="/" Component={Login} />
 
-        <Route path="/" Component={Choix} />
-        <Route path="home" Component={Home} > 
+        <Route path="/choix" Component={Choix} />
+        <Route path="/home" Component={Home} > 
           <Route path="Visites" Component={Visites} />
           <Route path="Acteurs" Component={Acteurs} />
           <Route path="Actualite" Component={Actualite} />

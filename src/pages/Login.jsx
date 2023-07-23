@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import "../utils/sass/login.scss"
 import Cookies from 'js-cookie'; // https://www.npmjs.com/package/js-cookie
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import { URL } from '../Urls';
 
 const Login = () => {
   const [login, setLogin] = useState("");
@@ -12,27 +14,33 @@ const Login = () => {
 
   const GoOn = () => {
     setTimeout(()=>{
-      navigate('/home');
+      navigate('/choix');
+    }, 100)
+  }
+
+  const BackOff = () => {
+    setTimeout(()=>{
+      window.location.reload();
     }, 100)
   }
 
   const VerifRegEx = () => {
     if (loginRegex.test(login) ) {
-      console.log("login okay");
+      // console.log("login okay");
       const message = document.querySelector("#errLogMes")
       message.style.opacity = 0;
     } else {
-      console.log("login false");
+      // console.log("login false");
       const message = document.querySelector("#errLogMes")
       message.style.opacity = 1;
     }
 
     if (passwordRegex.test(password)) {
-      console.log("password okay");
+      // console.log("password okay");
       const message = document.querySelector("#errPasMes")
       message.style.opacity = 0;
     } else {
-      console.log("password false");
+      // console.log("password false");
       const message = document.querySelector("#errPasMes")
       message.style.opacity = 1;
     }
@@ -43,11 +51,25 @@ const Login = () => {
   }
 
   const VerifUser = () => {
+    let userId
     // post vers le back end avec login et mdp qui return l'id dans la response
+    axios.post(URL.verifyUsers, {
+      email: login,
+      password: password,
+    }).then(response =>{
+      userId = response.data.id
+      // console.log(response.data.id);
+      if (userId === "The password is incorrect" || userId === "No user found") {
+        BackOff()
+      }
+      Cookies.set("TokenForDNSUser", userId, { expires: 1 }); // remplacer par l'id de l'utilisateur
+      setTimeout(()=>{
+        GoOn();
+      }, 500)
+    })
+
     // localStorage.setItem("TokenForDNSUser", 1234567890)
-    Cookies.set('TokenForDNSUser', '64b2d6a2fb83c925e067f6b7', { expires: 1 }) // remplacer par l'id de l'utilisateur
-    GoOn()
-  }
+  };
   
   const handleSubmit = (e) => {
     e.preventDefault();

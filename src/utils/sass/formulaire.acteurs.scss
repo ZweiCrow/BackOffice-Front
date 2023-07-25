@@ -11,7 +11,9 @@
                                                 textarea  { font-family: Open; width: 90%; height: 200px; border-radius: 5px; outline: none; border: none; padding: 5px;}
                                                 #theatre  { font-family: Open; width: 80%; height: 40%; border-radius: 5px; outline: none; border: none; padding: 0 5px;}
                                               }
-                                    .bio      { width: 100%; height: fit-content; }
+                                    .bio      { width: 100%; height: fit-content; 
+                                                label { width: 91%;}
+                                              }
                                     .piece    { width: 100%;
                                                 label   { width: 91%;}
                                                 select  { width: 91%; height: 40%; border-radius: 5px; outline: none; border: none; padding: 0 5px;}

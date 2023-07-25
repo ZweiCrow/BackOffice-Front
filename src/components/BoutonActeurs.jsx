@@ -6,14 +6,13 @@ const BoutonActeurs = ({ id }) => {
 
   if (id.role === "add") {
     return (
-      <Link to="/home/formulaire" className="addButton">
+      <Link to="/home/ActeursForm" state={{ from: "add" }} className="addButton">
         <img className="add" src="/img/icons/add.svg" alt="" />
       </Link>
     );
   }else{
-    console.log(id);
     return (
-      <Link to={"/"} id="BoutonActeurs">
+      <Link to={"/home/ActeursForm"} state={{ from: "up-supp" ,id: id._id}} id="BoutonActeurs">
         <div className="name"><p>{id.name}</p></div>
         <img className="face" src={"https://theatre.startwin.fr/" + id.imagePath} alt="" />
       </Link>

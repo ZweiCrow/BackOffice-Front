@@ -25,10 +25,11 @@ export const URL = {
   fetchActualiteMById: "https://theatre.startwin.fr/news/Michel/id/", // + id
 
   fetchUsers: "https://theatre.startwin.fr/users",
-  verifyUsers: "https://theatre.startwin.fr/users/check-user-exists"
+  verifyUsers: "https://theatre.startwin.fr/users/check-user-exists",
   
   // ENREGISTREMENT
+  postActeur: "https://theatre.startwin.fr/actors/post",
   
   // SUPPRESSION
-
+  suppActeur: "https://theatre.startwin.fr/actors/delete/", // + id
 }

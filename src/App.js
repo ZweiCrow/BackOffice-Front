@@ -7,6 +7,7 @@ import Acteurs from "./components/Acteurs";
 import Actualite from "./components/Actualite";
 import Programmation from "./components/Programmation";
 import AddContentForm from "./components/formulaire";
+import ActeursForm from "./components/ActeursForm";
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
           <Route path="Actualite" Component={Actualite} />
           <Route path="Programmation" Component={Programmation} />
           <Route path="Formulaire" Component={AddContentForm} />
+          <Route path="ActeursForm" Component={ActeursForm} />
         </Route>
         
       </Routes>
